@@ -90,7 +90,7 @@ window = {};
     
               if (!hasReturnedModule && hasFilledExports)
                 module = exports;
-            }
+            };
     
         this.require(deps, onRequire, exports);
     
