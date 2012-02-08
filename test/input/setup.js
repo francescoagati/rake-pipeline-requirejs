@@ -1,0 +1,2 @@
+delete this.require;
+window = {};
