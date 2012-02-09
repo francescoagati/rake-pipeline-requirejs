@@ -9,14 +9,14 @@ module Rake::Pipeline::RequireJS
       local_lib_code = File.read(File.dirname(__FILE__) + '/context_filter/requirejs-local.js')
 
       output.write <<-JS
-(function() {
+(function(receiver) {
   var local = {};
 
   (function(exports) {
     #{local_lib_code.gsub(/\n/, "\n    ")}
   })(local);
 
-  var context = new local.Context
+  var context = new local.Context(receiver)
     , require = context.makeRequireFunction();
       JS
     
@@ -37,7 +37,7 @@ module Rake::Pipeline::RequireJS
   require(['main'], function(main) {
     main();
   });
-})();
+})(this);
       JS
     end
   end

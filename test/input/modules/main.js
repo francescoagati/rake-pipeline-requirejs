@@ -4,7 +4,9 @@ require.config({
   }
 });
 
-define(['underscore', 'backbone', 'jquery', 'meta'], function(underscore, backbone, jquery, meta) {
+define(['underscore', 'backbone', 'jquery', 'meta', 'coffee-script'], function(underscore, backbone, jquery, meta) {
+  var self = this;
+
   return function() {
     console.log('main');
 
@@ -18,6 +20,9 @@ define(['underscore', 'backbone', 'jquery', 'meta'], function(underscore, backbo
     console.log('  .. jQuery =', jquery);
 
     // define([<deps>])
-    console.log('  .. meta =', meta);
+    console.log('  .. meta =', meta);   // undefined
+
+    // define(function() { ... this ... })
+    console.log('  .. self.CoffeeScript =', self.CoffeeScript);
   };
 });
