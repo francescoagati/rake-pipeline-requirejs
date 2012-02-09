@@ -1,3 +1,3 @@
-define(['jquery', 'exports'], function($, exports) {
-  exports.bbExport = $ + '+[Backbone]';
+define(['underscore', 'exports'], function(underscore, exports) {
+  exports.bbExport = underscore + '+[Backbone]';
 });
