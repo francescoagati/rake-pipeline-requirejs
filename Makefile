@@ -1,5 +1,5 @@
 REQ_JS_PATH        = "lib/rake-pipeline/requirejs"
-CLOAK_JS_PATH      = "$(REQ_JS_PATH)/context_filter/requirejs-cloak.js"
+CLOAK_JS_PATH      = "$(REQ_JS_PATH)/context_filter/requirejs-local.js"
 JSHINT_CONFIG_PATH = "jshint.json"
 
 check:
