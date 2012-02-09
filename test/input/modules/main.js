@@ -4,7 +4,7 @@ require.config({
   }
 });
 
-define(['underscore', 'backbone', 'jquery'], function(underscore, backbone, jquery) {
+define(['underscore', 'backbone', 'jquery', 'meta'], function(underscore, backbone, jquery, meta) {
   return function() {
     console.log('main');
 
@@ -16,5 +16,8 @@ define(['underscore', 'backbone', 'jquery'], function(underscore, backbone, jque
 
     // define([<alias>], function() { })
     console.log('  .. jQuery =', jquery);
+
+    // define([<deps>])
+    console.log('  .. meta =', meta);
   };
 });
