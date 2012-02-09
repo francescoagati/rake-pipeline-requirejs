@@ -6,6 +6,6 @@ check:
 	jshint $(CLOAK_JS_PATH) --config $(JSHINT_CONFIG_PATH)
 
 test: .PHONY
-	rm -rf tmp test/output/app.js && bundle exec rakep build && clear && node test/output/app.js
+	cd test && rm -rf tmp output/* && BUNDLE_GEMFILE=../Gemfile bundle exec rakep build && node output/app.js
 
 .PHONY:

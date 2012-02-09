@@ -1,13 +1,20 @@
-$:.unshift File.dirname(__FILE__) + '/lib'
+$:.unshift File.dirname(__FILE__) + '/../lib'
 
 require 'rake-pipeline/requirejs/context_filter'
+require 'rake-pipeline/requirejs/define_filter'
 
-input 'test/input'
-output 'test/output'
+input 'input'
+output 'output'
+
+
+match 'vendor/**/*.js' do
+  filter Rake::Pipeline::RequireJS::DefineFilter do |path|
+    path.sub(/^vendor\//, 'modules/vendor/')
+  end
+end
 
 match 'modules/**/*.js' do
   module_id_generator = lambda { |file| file.path.sub(/^modules\//, '').sub(/\.js$/, '') }
-
   filter Rake::Pipeline::RequireJS::ContextFilter, module_id_generator do
     'modules.js'
   end
