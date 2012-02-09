@@ -6,18 +6,18 @@ module Rake::Pipeline::RequireJS
     end
 
     def generate_output(inputs, output)
-      cloak_lib_code = File.read(File.dirname(__FILE__) + '/context_filter/requirejs-cloak.js')
+      local_lib_code = File.read(File.dirname(__FILE__) + '/context_filter/requirejs-local.js')
 
       output.write <<-JS
 (function() {
-  var cloak = {};
+  var local = {};
 
   (function(exports) {
-    #{cloak_lib_code.gsub(/\n/, "\n    ")}
-  })(cloak);
+    #{local_lib_code.gsub(/\n/, "\n    ")}
+  })(local);
 
-  var cloakContext = new cloak.Context
-    , require = cloakContext.makeRequireFunction();
+  var context = new local.Context
+    , require = context.makeRequireFunction();
       JS
     
       inputs.each do |input|
@@ -26,7 +26,7 @@ module Rake::Pipeline::RequireJS
 
         output.write <<-JS
   (function() {
-    var define = cloakContext.makeDefineFunction('#{module_id}');
+    var define = context.makeDefineFunction('#{module_id}');
     #{code.gsub(/\n/, "\n    ")}
   })();
         JS
