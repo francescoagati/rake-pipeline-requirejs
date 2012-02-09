@@ -6,7 +6,6 @@ require 'rake-pipeline/requirejs/define_filter'
 input 'input'
 output 'output'
 
-
 match 'vendor/**/*.js' do
   filter Rake::Pipeline::RequireJS::DefineFilter do |path|
     path.sub(/^vendor\//, 'modules/vendor/')
