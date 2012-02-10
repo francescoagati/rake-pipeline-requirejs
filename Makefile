@@ -6,6 +6,9 @@ check:
 	jshint $(LOCAL_LIB_PATH) --config $(JSHINT_CONFIG_PATH)
 
 test: .PHONY
-	cd test && rm -rf tmp output/* && BUNDLE_GEMFILE=../Gemfile bundle exec rakep build && node output/app.js
+	cd test \
+	  && rm -rf tmp output/* \
+	  && BUNDLE_GEMFILE=../Gemfile bundle exec rakep build \
+	  && node output/app.js
 
 .PHONY:
