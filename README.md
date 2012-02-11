@@ -37,6 +37,9 @@ Example `Assetfile` to concatenate all anonymous modules in `js/` to
       end
     end
 
+Requires a initialization function in a module file named `main.js`.  In the
+above example, `js/main.js`.
+
 ## Why not r.js <a name="why"></a>
 
 I couldn't use `r.js` in a certain project because it couldn't parse calls to
