@@ -7,7 +7,7 @@ modules into a single file.  Once modules are concatenated,
 Acts as an alternative to the RequireJS [Optimizer][r-js], `r.js`.
 
 `ContextFilter` (see [Usage](#usage)) includes a replacement for RequireJS that
-implements a subset of its API (see [Why not `r.js`](#why)).  Supported:
+implements a subset of its API (see [Why not r.js](#why)).  Supported:
 
   * `define([<dep>[, <dep>]])`
   * `define([<dep>[, <dep>]], function(arg[, arg]) { })`
@@ -37,8 +37,8 @@ Example `Assetfile` to concatenate all anonymous modules in `js/` to
       end
     end
 
-Requires a initialization function in a module file named `main.js`.  In the
-above example, `js/main.js`.
+Expects an initialization function in a `main.js` module.  In the above example,
+this would be `js/main.js`.
 
 ## Why not r.js <a name="why"></a>
 
