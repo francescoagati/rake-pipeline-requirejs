@@ -1,7 +1,7 @@
-# `Rake::Pipeline::RequireJS`
+# Rake::Pipeline::RequireJS
 
-[`Rake::Pipeline`][1] filters for concatenating anonymous RequireJS modules into
-a single file.  Once modules are concatenated, [RequireJS][2] is not needed
+[Rake::Pipeline][1] filters for concatenating anonymous RequireJS modules into a
+single file.  Once modules are concatenated, [RequireJS][2] is not needed
 anymore.
 
 Acts as an alternative to the RequireJS [Optimizer][3], `r.js`.
@@ -44,5 +44,5 @@ Example `Assetfile` to concatenate all anonymous modules in `js/` to
 ## Why not `r.js` <a name="why"></a>
 
 I couldn't use it in a certain project because it couldn't parse calls to
-`require()` and `define()` in non-`.js` files, like within `<script>` tags of
+`require()` and `define()` in non-`.js` files, such as within `<script>` tags of
 server-side views.
