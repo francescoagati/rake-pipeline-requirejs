@@ -66,7 +66,7 @@ It just needed a RequireJS replacement for concatenated modules.
 
 Dependencies:
 
-  * [node-jshint][node-jshint].
+  * [node-jshint][node-jshint]
 
 Execution:
 
