@@ -60,6 +60,30 @@ Besides, I don't like that it:
 In contrast, Rake::Pipeline allows unlimited possibilities when concatenating.
 It just needed a RequireJS replacement for concatenated modules.
 
+## Development
+
+### JavaScript linting
+
+Dependencies:
+
+  * [node-jshint][node-jshint].
+
+Execution:
+
+    $ make lint
+
+### Tests
+
+Dependencies:
+
+    $ cd test
+    $ bundle install
+
+Execution:
+
+    $ make test
+
 [rake-pipeline]: https://github.com/livingsocial/rake-pipeline
 [requirejs]: http://requirejs.org
 [r-js]: http://requirejs.org/docs/optimization.html
+[node-jshint]: https://github.com/jshint/node-jshint
