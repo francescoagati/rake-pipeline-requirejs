@@ -76,7 +76,6 @@ Execution:
 
 Dependencies:
 
-    $ cd test
     $ bundle install
 
 Execution:
